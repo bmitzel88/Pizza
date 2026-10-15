@@ -19,6 +19,33 @@ document.getElementById("pizza-form").onsubmit = () => {
         isValid = false;
     }
 
+    let email = document.getElementById("email").value.trim();
+    if (email === "") {
+        document.getElementById("err-email").style.display = "block";
+        isValid = false;
+    }
+
+    // Validate pickup or delivery method
+    let methodSelected = false;
+    let methodButtons = document.getElementsByName("method");
+    for (i=0; i<methodButtons.length; i++) {
+        if (methodButtons[i].checked) {
+            methodSelected = true;
+        }
+    }
+
+    if (!methodSelected) {
+        document.getElementById("err-method").style.display = "block";
+        isValid = false;
+    }
+
+    // Validate pizza size
+    let sizeSelected = document.getElementById("size").value;
+    if (sizeSelected === "none") {
+        document.getElementById("err-size").style.display = "block";
+        isValid = false;
+    }
+
     // Do not submit the form if data is in-valid
     return isValid;
 };
