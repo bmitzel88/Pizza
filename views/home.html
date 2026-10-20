@@ -20,10 +20,10 @@
             <h2>Serving GRC for 50 years!</h2>
             <hr>
             <p>We make the best pizzas ever. Visit us today!</p>
-            <a id="contact-button" href="#" role="button">Contact Us</a>
+            <a id="contact-button" href="/contact-us" role="button">Contact Us</a>
         </div>
 
-        <form id="pizza-form" action="#" method="get">
+        <form id="pizza-form" action="/submit-order" method="post">
             <!-- Contact info -->
              <fieldset>
                 <legend>Contact Info</legend>
@@ -46,11 +46,11 @@
                 <legend>Select Pickup or Delivery</legend>
                 <span class="err" id="err-method">Select pickup or delivery</span>
                 <label for="pickup">
-                    <input type="radio" id="pickup" name="method"> <!--Needs to have same name to not have both be able to be selected at same time-->
+                    <input type="radio" id="pickup" value="pickup" name="method"> <!--Needs to have same name to not have both be able to be selected at same time-->
                     Pickup
                 </label>
                 <label for="delivery">
-                    <input type="radio" id="delivery" name="method">
+                    <input type="radio" id="delivery" value="delivery" name="method">
                     Delivery
                 </label>
              </fieldset>
